@@ -20,12 +20,14 @@ This repository contains *screen-recorded*, *verifiable*, and *version-controlle
 - [ ] A cover-up — I don’t do those
 
 ## > Repository Structure
+```
 not-a-dog-swap/
-├── recordings/ # Screen-captured sessions of the workflow
-├── scripts/ # DNA parsing, verification tools
-├── data/ # Sample input/output files
-├── truth/ # Final outputs and documented results
-└── README.md # This document
+├── recordings/      # Screen-captured sessions of the workflow
+├── scripts/         # DNA parsing and verification tools
+├── data/            # Sample input/output files
+├── truth/           # Final outputs and documented results
+└── README.md        # This document
+```
 
 ## > Why I Did This
 
