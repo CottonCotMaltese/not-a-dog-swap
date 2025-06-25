@@ -215,12 +215,14 @@ class DogDNAParentageAnalyzer:
         else:
             results['consistency_rate'] = 0
         
-        # Determine confidence level
-        if results['inconsistent_markers'] == 0 and results['consistent_markers'] >= 20:
+        # Updated confidence level determination based on new standards
+        exclusions = results['inconsistent_markers']
+        
+        if exclusions <= 1:
             results['confidence_level'] = 'Very High'
-        elif results['inconsistent_markers'] <= 1 and results['consistent_markers'] >= 15:
+        elif exclusions <= 2:
             results['confidence_level'] = 'High'
-        elif results['inconsistent_markers'] <= 2 and results['consistent_markers'] >= 10:
+        elif exclusions <= 5:
             results['confidence_level'] = 'Moderate'
         else:
             results['confidence_level'] = 'Low'
@@ -237,19 +239,18 @@ class DogDNAParentageAnalyzer:
         print(f"\nPARENTAGE CONCLUSION:")
         print("-" * 50)
         
-        # Determine final conclusion
-        if results['inconsistent_markers'] == 0 and results['consistent_markers'] >= 15:
+        # Updated final conclusion based on new exclusion tolerance standards
+        exclusions = results['inconsistent_markers']
+        
+        if exclusions <= 1:
             conclusion = "PARENTAGE CONFIRMED"
-            explanation = f"All {results['consistent_markers']} tested markers support the proposed parentage."
-        elif results['inconsistent_markers'] <= 2 and results['consistent_markers'] >= 10:
-            conclusion = "PARENTAGE LIKELY"
-            explanation = f"Only {results['inconsistent_markers']} exclusions found among {results['testable_markers']} markers."
-        elif results['inconsistent_markers'] > results['consistent_markers']:
-            conclusion = "PARENTAGE EXCLUDED" 
-            explanation = f"Too many exclusions ({results['inconsistent_markers']}) relative to consistent markers ({results['consistent_markers']})."
+            explanation = f"Likely parentage with {exclusions} exclusion(s) - within acceptable range for mutations/genotyping artifacts."
+        elif exclusions <= 3:
+            conclusion = "PARENTAGE QUESTIONABLE"
+            explanation = f"{exclusions} exclusions found. Questionable result - possibly retest recommended."
         else:
-            conclusion = "INCONCLUSIVE"
-            explanation = "Results are ambiguous. Additional testing may be needed."
+            conclusion = "PARENTAGE EXCLUDED"
+            explanation = f"{exclusions} exclusions found. Parentage excluded - too many inconsistencies."
         
         print(conclusion)
         print(explanation)
