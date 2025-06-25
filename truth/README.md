@@ -132,14 +132,14 @@ def check_mendelian_inheritance(parent1, parent2, offspring):
 ## Statistical Interpretation / 统计解释
 
 **Confidence Categories:**
-- **Very High:** 0 exclusions, ≥20 consistent markers
-- **High:** ≤1 exclusion, ≥15 consistent markers  
-- **Moderate:** ≤2 exclusions, ≥10 consistent markers
-- **Low:** >2 exclusions or <10 consistent markers
+- **Very High:** 0-1 exclusion
+- **High:** ≤2 exclusions
+- **Moderate:** ≤5 exclusions
+- **Low:** ≥6 exclusions
 
 **Exclusion Tolerance:**
-- 0-1 exclusions: Likely parentage (mutations/technical errors)
-- 2-3 exclusions: Questionable, investigate further
+- 0-1 exclusions: Likely parentage (mutations/genotyping artifacts)
+- 2-3 exclusions: Questionable, possibly retest
 - 4+ exclusions: Parentage excluded
 
 **Why Some Exclusions are Acceptable:**
