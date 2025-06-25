@@ -7,7 +7,7 @@ If you're going to accuse me, bring receipts. This repo is mine. The dogs are to
 They accused me of switching dogs for DNA testing.  
 So I built a workflow they can’t question — and made it public.
 
-本仓库包含 **全程录屏**、**可验证**、并具备**版本控制**的 DNA 检测证据。  
+本repo包含 **全程录屏**、**可验证**、并具备**版本控制**的 DNA 检测证据。  
 每一步、每一个文件、每一条命令，都在这里。  
 This repository contains *screen-recorded*, *verifiable*, and *version-controlled* evidence of the DNA testing process for my dog. Every step, every file, every command — right here.
 
