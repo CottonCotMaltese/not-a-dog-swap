@@ -113,7 +113,7 @@ def check_mendelian_inheritance(parent1, parent2, offspring):
 - BICF2G630307199 → A/A
 
 **SNP Advantages:**
-- High discrimination power (220+ markers)
+- High discrimination power (124 markers)
 - Very stable (low mutation rate)⁴
 - Standardized across laboratories
 - Reliable for complex cases
